@@ -27,11 +27,10 @@ ________________________________________________________________________________
 print(Fore.BLUE + scriptTitle + Back.RESET + Fore.RESET)
 
 
-# + '4: Random Story\n'
-storySelector = int(input('1: True Love Story?\n' + '2: -No Story-\n' + '3: -No Story-\n' + 'Choose a Story: '))
+# + '_: Random Story\n'
 
 
-print( Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET)
+
 
 # Need blank respounce
 
@@ -40,13 +39,17 @@ def inputChecker(userInput):
         return True
     else:
         print('hOw DaRe YoU')
+
         return False
 
+def border():
+    print(Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET)
 
 def trueLoveQuestionMark():
     # Dictionary contains predetermined words that will be selected at random incase the user doesn't input anything
     noInput = {
         'adjList': ['Amazing', 'FABULOUSE', 'GORGEOUSE', 'GOD SEND'],
+        'adverbList': ['really', 'absolutly', 'extremmly', 'sadly'],
         'nounList': ['robin', 'flea', 'dog', 'fly'],
         'verbList': ['mock', 'hate', 'laugh', 'teas'],
         'nameList': ['Jason', 'Tod', 'Danny', 'Ninja'],
@@ -57,93 +60,56 @@ def trueLoveQuestionMark():
     
     
     # Collection of all User Input data collected and pulled into a list
-    userAdj = input('Give me a Adjective: ')
+    userAdj = input('Give me a ' + Fore.LIGHTCYAN_EX + 'Adjective: ' + Fore.RESET)
     if not userAdj.strip():
         userAdj = random.choice(noInput.get('adjList'))
 
-    userNoun = input('Give me a noun(Prefered Animal): ')
+    userAdverb = input('Give me a ' + Fore.LIGHTCYAN_EX + 'Adverb: ' + Fore.RESET)
+    if not userAdverb.strip():
+        userAdverb = random.choice(noInput.get('adverbList'))
+
+    userNoun = input('Give me a' + Fore.LIGHTCYAN_EX + ' noun' + Fore.RESET + '(Prefered Animal): ')
     if not userNoun.strip():
         userNoun = random.choice(noInput.get('nounList'))
         
-    userVerb = input('Give me a verb: ')
+    userVerb = input('Give me a' + Fore.LIGHTCYAN_EX + ' verb: ' + Fore.RESET)
     if not userVerb.strip():
        userVerb = random.choice(noInput.get('verbList'))
     
-    userLocation = input('Give me a location: ')
+    userLocation = input('Give me a' + Fore.LIGHTCYAN_EX + ' location: ' + Fore.RESET)
     if not userLocation.strip():
         userLocation = random.choice(noInput.get('locationList'))
 
-    userName = input('Gime me someone\'s name: ')
+    userName = input('Gime me someone\'s'+ Fore.LIGHTCYAN_EX +' name: ' + Fore.RESET)
     if not userName.strip():
         userName = random.choice(noInput.get('nameList'))
 
     # Border
-    print(Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET + Fore.YELLOW + "Your MadLib was generated: \n" + Fore.RESET)
-    
+    border()
+    print( Fore.YELLOW + 'Your MADLIB has Been Generated' + Fore.RESET )
+    border()
+
+
     print(
-        f'Greg looked quite {userAdj.lower()} on a good day. He hated {userNoun.lower()}s because they {userVerb.lower()}ed him for the way he looked. ' +
+        f'Greg looked quite {userAdj.lower()} on a good day. He hated {userNoun.lower()}s because they {userAdverb.lower()} {userVerb.lower()}ed him for the way he looked. ' +
         f'In till he met {userName.title()}\'s {userNoun.lower()} his one true love in life in {userLocation.lower()}. {userName.title()} was honestly quite disgusted when he heard about this.')
     
 
+   
 
 
 
-
- # Secound Story for Madlib   
-def garyPartTwo():
-    # Dictionary contains predetermined words that will be selected at random incase the user doesn't input anything
-    noInput = {
-        'adjList': ['Amazing', 'FABULOUSE', 'GORGEOUSE', 'GOD SEND'],
-        'nounList': ['robin', 'flea', 'dog', 'fly'],
-        'verbList': ['mock', 'hate', 'laugh', 'teas'],
-        'nameList': ['Jason', 'Tod', 'Danny', 'Ninja'],
-        'locationList': ['basement', 'Africa', 'Zimbabewa', 'Makeschool']
-    }
-
-
-    
-    
-    # Collection of all User Input data collected and pulled into a list
-    userAdj = input('Give me a Adjective: ')
-    if not userAdj.strip():
-        userAdj = random.choice(noInput.get('adjList'))
-
-    userNoun = input('Give me a noun(Prefered Animal): ')
-    if not userNoun.strip():
-        userNoun = random.choice(noInput.get('nounList'))
-        
-    userVerb = input('Give me a verb: ')
-    if not userVerb.strip():
-       userVerb = random.choice(noInput.get('verbList'))
-    
-    userLocation = input('Give me a location: ')
-    if not userLocation.strip():
-        userLocation = random.choice(noInput.get('locationList'))
-
-    userName = input('Gime me someone\'s name: ')
-    if not userName.strip():
-        userName = random.choice(noInput.get('nameList'))
-
-    # Border
-    print(Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET + Fore.YELLOW + "Your MadLib was generated: \n" + Fore.RESET)
-    
-    print(
-        f'Greg looked quite {userAdj.lower()} on a good day. He hated {userNoun.lower()}s because they {userVerb.lower()}ed him for the way he looked. ' +
-        f'In till he met {userName.title()}\'s {userNoun.lower()} his one true love in life in {userLocation.lower()}. {userName.title()} was honestly quite disgusted when he heard about this.')
-       
-
-
-
-
+try:
+   storySelector = int(input('1: ' + Fore.CYAN + 'True Love Story?\n' + Fore.RESET+ '2: '+ Fore.RED +'-No Story-\n' + Fore.RESET+ '3: '+ Fore.RED+'-No Story-\n' + Fore.RESET + 'Choose a Story: '))
+except ValueError:
+   pass
 
 
 # Story selection 1,2,3
-if not storySelector:
-    print("That's a No No")
-    storySelector = int(input('1: True Love Story?\n' + '2: -No Story-\n' + '3: -No Story-\n' + 'Choose a Story: '))
-    
 if storySelector == 1:
+    border()
     print(Fore.RED + Style.BRIGHT + 'Blank respouce will give you a random generated word')
+    border()
     trueLoveQuestionMark()
 elif storySelector == 2:
     print('wrong , choose 1')
