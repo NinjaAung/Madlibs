@@ -28,8 +28,9 @@ print(Fore.BLUE + scriptTitle + Back.RESET + Fore.RESET)
 
 
 # + '4: Random Story\n'
-
 storySelector = int(input('1: True Love Story?\n' + '2: -No Story-\n' + '3: -No Story-\n' + 'Choose a Story: '))
+
+
 print( Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET)
 
 # Need blank respounce
@@ -55,7 +56,7 @@ def trueLoveQuestionMark():
 
     
     
-
+    # Collection of all User Input data collected and pulled into a list
     userAdj = input('Give me a Adjective: ')
     if not userAdj.strip():
         userAdj = random.choice(noInput.get('adjList'))
@@ -80,8 +81,56 @@ def trueLoveQuestionMark():
     print(Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET + Fore.YELLOW + "Your MadLib was generated: \n" + Fore.RESET)
     
     print(
-        f'greg looked quite {userAdj.lower()} on a good day. He hated {userNoun.lower()}s because they {userVerb.lower()}ed him for the way he looked. ' +
+        f'Greg looked quite {userAdj.lower()} on a good day. He hated {userNoun.lower()}s because they {userVerb.lower()}ed him for the way he looked. ' +
         f'In till he met {userName.title()}\'s {userNoun.lower()} his one true love in life in {userLocation.lower()}. {userName.title()} was honestly quite disgusted when he heard about this.')
+    
+
+
+
+
+
+ # Secound Story for Madlib   
+ def garyPartTwo():
+    # Dictionary contains predetermined words that will be selected at random incase the user doesn't input anything
+    noInput = {
+        'adjList': ['Amazing', 'FABULOUSE', 'GORGEOUSE', 'GOD SEND'],
+        'nounList': ['robin', 'flea', 'dog', 'fly'],
+        'verbList': ['mock', 'hate', 'laugh', 'teas'],
+        'nameList': ['Jason', 'Tod', 'Danny', 'Ninja'],
+        'locationList': ['basement', 'Africa', 'Zimbabewa', 'Makeschool']
+    }
+
+
+    
+    
+    # Collection of all User Input data collected and pulled into a list
+    userAdj = input('Give me a Adjective: ')
+    if not userAdj.strip():
+        userAdj = random.choice(noInput.get('adjList'))
+
+    userNoun = input('Give me a noun(Prefered Animal): ')
+    if not userNoun.strip():
+        userNoun = random.choice(noInput.get('nounList'))
+        
+    userVerb = input('Give me a verb: ')
+    if not userVerb.strip():
+       userVerb = random.choice(noInput.get('verbList'))
+    
+    userLocation = input('Give me a location: ')
+    if not userLocation.strip():
+        userLocation = random.choice(noInput.get('locationList'))
+
+    userName = input('Gime me someone\'s name: ')
+    if not userName.strip():
+        userName = random.choice(noInput.get('nameList'))
+
+    # Border
+    print(Fore.BLUE + "_______________________________________________________________________________________________________________________________\n" + Fore.RESET + Fore.YELLOW + "Your MadLib was generated: \n" + Fore.RESET)
+    
+    print(
+        f'Greg looked quite {userAdj.lower()} on a good day. He hated {userNoun.lower()}s because they {userVerb.lower()}ed him for the way he looked. ' +
+        f'In till he met {userName.title()}\'s {userNoun.lower()} his one true love in life in {userLocation.lower()}. {userName.title()} was honestly quite disgusted when he heard about this.')
+       
 
 
 
