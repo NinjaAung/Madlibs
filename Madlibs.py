@@ -39,7 +39,7 @@ def inputChecker(userInput):
     if re.match(r'^[a-zA-Z]*$', userInput):
         return True
     else:
-        print('You cannot use special characters.')
+        print('hOw DaRe YoU')
         return False
 
 
@@ -90,7 +90,7 @@ def trueLoveQuestionMark():
 
 
  # Secound Story for Madlib   
- def garyPartTwo():
+def garyPartTwo():
     # Dictionary contains predetermined words that will be selected at random incase the user doesn't input anything
     noInput = {
         'adjList': ['Amazing', 'FABULOUSE', 'GORGEOUSE', 'GOD SEND'],
@@ -138,6 +138,10 @@ def trueLoveQuestionMark():
 
 
 # Story selection 1,2,3
+if not storySelector:
+    print("That's a No No")
+    storySelector = int(input('1: True Love Story?\n' + '2: -No Story-\n' + '3: -No Story-\n' + 'Choose a Story: '))
+    
 if storySelector == 1:
     print(Fore.RED + Style.BRIGHT + 'Blank respouce will give you a random generated word')
     trueLoveQuestionMark()
@@ -145,4 +149,5 @@ elif storySelector == 2:
     print('wrong , choose 1')
 elif storySelector == 3:
     print('No more chaotic ideas')
+
 
